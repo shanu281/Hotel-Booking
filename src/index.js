@@ -6,9 +6,9 @@ import RoomProvider from './context/RoomContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RoomProvider>
+   <RoomProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </RoomProvider>
+   </RoomProvider>
 );
