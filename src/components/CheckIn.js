@@ -8,7 +8,7 @@ import "../datepicker.css";
 const CheckIn = () => {
   const [startDate, setStartDate] = useState(false);
   return (
-    <div className="relative flex justify-end h-full text-center ">
+    <div className="relative flex justify-end h-full text-center items-center ">
       <div className="absolute z-10 pr-8 ">
         <div>
           <BsCalendar className="text-accent text-base" />

@@ -15,7 +15,7 @@ const Room = ({ room }) => {
         />
       </div>
       <div className="bg-white shadow-lg  max-w-[300px] mx-auto h-[60px] -translate-y-1/2 flex justify-center items-center uppercase font-tertiary tracking-[1px] font-semibold text-base ">
-        <div className="flex justify-between w-[80%]">
+        <div className="flex justify-between w-[95%] gap-x-1">
           <div className="flex items-center gap-x-2">
             <div className="text-accent flex ">
               <BsArrowsFullscreen className="text-[15px]" />
@@ -46,8 +46,11 @@ const Room = ({ room }) => {
         </p>
       </div>
       <div>
-        <Link to={`/room/${id}`} className="btn btn-secondary btn-sm max-w-[240px] mx-auto text-center">
-           book now from ${price}
+        <Link
+          to={`/room/${id}`}
+          className="btn btn-secondary btn-sm max-w-[240px] mx-auto text-center"
+        >
+          book now from ₹ {price*50}
         </Link>
       </div>
     </div>
