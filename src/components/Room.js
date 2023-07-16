@@ -48,7 +48,7 @@ const Room = ({ room }) => {
       <div>
         <Link
           to={`/room/${id}`}
-          className="btn btn-secondary btn-sm max-w-[240px] mx-auto text-center"
+          className="btn btn-secondary  btn-sm max-w-[260px] mx-auto text-center"
         >
           book now from ₹ {price*50}
         </Link>

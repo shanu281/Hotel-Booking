@@ -25,21 +25,10 @@ const RoomProvider = ({ children }) => {
       setLoading(false);
     }, 3000);
   };
-  console.log(rooms);
+ 
   return (
     <RoomContext.Provider
-      value={{
-        rooms,
-        adults,
-        setAdults,
-        kids,
-        setKids,
-        total,
-        setTotal,
-        handleCheck,
-        loading,
-      }}
-    >
+      value={{ rooms, adults, setAdults, kids, setKids, total, setTotal, handleCheck, loading, }} >
       {children}
     </RoomContext.Provider>
   );

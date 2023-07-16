@@ -15,12 +15,12 @@ const slides = [
     btnText: "SEE OUR ROOMS",
   },
   {
-    title: "Your Luxury Hotel for Vaccation",
+    title: "Explore Our Wide Range Of Rooms",
     bg: Img2,
     btnText: "SEE OUR ROOMS",
   },
   {
-    title: "Your Luxury Hotel for Vaccation",
+    title: "Premium Facilities At Affordable Price",
     bg: Img3,
     btnText: "SEE OUR ROOMS",
   },
@@ -32,7 +32,7 @@ const HeroSlider = () => {
       effect={"fade"}
       loop={true}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
-      className="heroSlider h-[600px] lg:h-[860px]"
+      className="heroSlider h-[560px] lg:h-[860px]"
     >
       {slides.map((slide, index) => {
         const { title, bg, btnText } = slide;
@@ -41,18 +41,19 @@ const HeroSlider = () => {
             key={index}
             className="h-full  relative flex justify-center items-center"
           >
-            {/* <div className="z-20 text-white text-center">
+            <div className="z-20 absolute text-white  mx-[350px] my-[250px] text-center">
 
-              <div className="uppercase font-tertiary tracking-[6px] mb-5">
+              <div className="uppercase  font-tertiary tracking-[6px] mb-5">
                 Just enjoy and relax
               </div>
+          
               <h1 className="text-[32px]  font-primary uppercase tracking-[2px] max-w-[920px] lg:text-[68px] leading-tight mb-6">
                 {title}
               </h1>
-              <button className="btn btn-lg btn-primary mx-auto">
+              {/* <button className="btn btn-lg btn-primary mx-auto">
                 {btnText}
-              </button>
-            </div> */}
+              </button> */}
+            </div>
             <div className="absolute top-0 w-full h-full">
               <img
                 className="object-cover h-full w-full"

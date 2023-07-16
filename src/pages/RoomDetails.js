@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import AdultsDropdown from "../components/AdultsDropdown";
 import KidsDropdown from "../components/KidsDropdown";
@@ -7,16 +7,40 @@ import CheckOut from "../components/CheckOut";
 import ScrollToTop from "../components/ScrollToTop";
 import { RoomContext } from "../context/RoomContext";
 import { FaCheck } from "react-icons/fa";
+import { Button, Modal } from 'antd';
+
+
 
 const RoomDetails = () => {
+ 
   const { rooms } = useContext(RoomContext);
   const { id } = useParams();
-  console.log(id);
+  
   const room = rooms.find((room) => {
     return room.id === Number(id);
   });
-  console.log(room);
   const { name, description, facilities, imageLg, price } = room;
+
+  // Sucess Modal 
+  const [modal, contextHolder] = Modal.useModal();
+  const countDown = () => {
+    let secondsToGo = 5;
+    const instance = modal.success({
+      title: 'Booking Confirmed',
+      content: 'Thank you, Your room has been booked',
+    });
+    const timer = setInterval(() => {
+      secondsToGo -= 1;
+      instance.update({
+        content: `Have a pleasent stay`,
+      });
+    }, 1000);
+    setTimeout(() => {
+      clearInterval(timer);
+      instance.destroy();
+    }, secondsToGo * 1000);
+  };
+  
   return (
     <section>
       <ScrollToTop />
@@ -58,7 +82,7 @@ const RoomDetails = () => {
             <div className="py-8 px-6 bg-accent/20 mb-12">
               <div className="flex flex-col space-y-4 mb-4 ">
                 <h3>Your Reservation</h3>
-                <div className="h-[60px]">
+                <div className="h-[60px]" >
                   <CheckIn />
                 </div>
                 <div className="h-[60px]">
@@ -71,8 +95,8 @@ const RoomDetails = () => {
                   <KidsDropdown />
                 </div>
               </div>
-              <button className="btn btn-lg btn-primary w-full">
-                Book now for ₹ {price*50}
+              <button onClick={countDown} className="btn btn-lg btn-primary w-full" >
+                text Book now for ₹ {price*50}
               </button>
             </div>
             {/* Rules */}
@@ -105,6 +129,7 @@ const RoomDetails = () => {
                 </li>
               </ul>
             </div>
+            {contextHolder}
           </div>
         </div>
       </div>

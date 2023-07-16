@@ -25,7 +25,7 @@ const Header = () => {
         </a>
         <nav
           className={`${
-            header ? "text-primary" : "text-white"
+            header ? "text-black" : "text-white"
           } flex font-tertiary tracking-[3px] text-[15px] items-center uppercase  gap-x-4 lg:gap-x-8`}
         >
           <a href="/" className="hover:text-accent transition">
